@@ -47,3 +47,14 @@ class ProductService:
             print(f"An error occurred: {e}")
 
             raise e
+
+    def getTotal(self):
+        try:
+            with connection.cursor() as cursor:
+                cursor.execute("SELECT SUM(price) FROM products")
+                return cursor.fetchall()
+        except Exception as e:
+            connection.rollback()
+            print(f"An error occurred: {e}")
+
+            raise e

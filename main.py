@@ -18,3 +18,4 @@ console.print(
 TUI.printProductsList()
 # TUI.createProductInput()
 TUI.getProduct()
+TUI.getProductsTotal()
