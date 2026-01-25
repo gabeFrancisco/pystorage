@@ -6,39 +6,34 @@ class ProductService:
     db = None
 
     def getAll(self):
-        cursor = connection.cursor()
-        cursor.execute("SELECT * FROM products")
-
-        result = cursor.fetchall()
-
-        connection.commit()
-        connection.close()
-
-        return result
+        with connection.cursor() as cursor:
+            cursor.execute("SELECT * FROM products")
+            return cursor.fetchall()
 
     def create(self, product: Product):
         try:
+            connection
+            with connection.cursor() as cursor:
+                cursor.execute(
+                    """
+                    INSERT INTO products(created_at, name, description, quantity, price) values (
+                        %s, %s, %s, %s, %s           
+                    )""",
+                    (
+                        product.created_at,
+                        product.name,
+                        product.description,
+                        product.quantity,
+                        product.price,
+                    ),
+                )
 
-            cursor = connection.cursor()
-            cursor.execute(
-                """
-                INSERT INTO products(created_at, name, description, quantity, price) values (
-                    %s, %s, %s, %s, %s           
-                )""",
-                (
-                    product.created_at,
-                    product.name,
-                    product.description,
-                    product.quantity,
-                    product.price,
-                ),
-            )
+                # result = cursor.fetchall()
 
-            # result = cursor.fetchall()
-
-            connection.commit()
-            connection.close()
-
-            print("Product created succesfully!")
+                connection.commit()
+                print("Product created succesfully!")
         except Exception as e:
+            connection.rollback()
             print(f"An error occurred: {e}")
+
+            raise e
