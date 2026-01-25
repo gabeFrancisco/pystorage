@@ -58,3 +58,14 @@ class ProductService:
             print(f"An error occurred: {e}")
 
             raise e
+
+    def delete(self, id):
+        try:
+            with connection.cursor() as cursor:
+                cursor.execute("""DELETE FROM products WHERE id = %s""", id)
+                connection.commit()
+        except Exception as e:
+            connection.rollback()
+            print(f"An error occurred: {e}")
+
+            raise e

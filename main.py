@@ -17,5 +17,6 @@ console.print(
 
 TUI.printProductsList()
 # TUI.createProductInput()
-TUI.getProduct()
-TUI.getProductsTotal()
+# TUI.getProduct()
+# TUI.getProductsTotal()
+TUI.deleteProduct()

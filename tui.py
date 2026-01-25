@@ -43,3 +43,8 @@ class TUI:
     @staticmethod
     def getProductsTotal():
         rich.print(p.getTotal())
+
+    @staticmethod
+    def deleteProduct():
+        id = Prompt.ask("Id do produto: ")
+        rich.print(p.delete(id))
