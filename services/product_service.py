@@ -1,5 +1,15 @@
+from db import connection
+
 class ProductService:
     db = None
 
-    def __init__(self):
-        pass
+    def getAll(self):
+        conn = connection.cursor();
+        conn.execute("SELECT * FROM products")
+        
+        result = conn.fetchall();
+
+        connection.commit()
+        connection.close()
+
+        return result; 

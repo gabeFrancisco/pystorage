@@ -1,8 +1,8 @@
-from mysql import connector
+import psycopg2
 
-connection = connector.connect(
+connection = psycopg2.connect(
     host = "localhost",
-    user = "root",
+    user = "postgres",
     password = "1234",
     database = "pystorage"
 )
