@@ -3,8 +3,6 @@ from models.product import Product
 
 
 class ProductService:
-    db = None
-
     def getAll(self):
         with connection.cursor() as cursor:
             cursor.execute("SELECT * FROM products")
