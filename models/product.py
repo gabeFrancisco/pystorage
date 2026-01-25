@@ -1,5 +1,5 @@
 from datetime import datetime
-from base_entity import BaseEntity
+from models.base_entity import BaseEntity
 
 
 class Product(BaseEntity):
