@@ -12,7 +12,6 @@ class ProductService:
 
     def create(self, product: Product):
         try:
-            connection
             with connection.cursor() as cursor:
                 cursor.execute(
                     """
@@ -32,6 +31,17 @@ class ProductService:
 
                 connection.commit()
                 print("Product created succesfully!")
+        except Exception as e:
+            connection.rollback()
+            print(f"An error occurred: {e}")
+
+            raise e
+
+    def get(self, id: int):
+        try:
+            with connection.cursor() as cursor:
+                cursor.execute("""SELECT * FROM products WHERE id = %s""", id)
+                return cursor.fetchall()
         except Exception as e:
             connection.rollback()
             print(f"An error occurred: {e}")

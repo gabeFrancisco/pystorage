@@ -1,27 +1,20 @@
-import datetime
 from services.product_service import ProductService
-from models.product import Product
 
-import rich
+from rich.console import Console
+from rich.panel import Panel
 
-product_service = ProductService()
+from tui import TUI
 
-rich.print(product_service.getAll())
+console = Console()
 
-rich.print("Vamos cadastrar um produto novo:")
-name = str(input("Nome: "))
-description = str(input("Descrição: "))
-quantity = int(input("Quantidade: "))
-price = float(input("Preço: "))
-
-product_service.create(
-    product=Product(
-        0,
-        datetime.datetime.now(),
-        None,
-        name,
-        description,
-        quantity,
-        price,
+console.print(
+    Panel(
+        "PyStorage - Welcome!",
+        style="white on blue",
+        expand=True,
     )
 )
+
+TUI.printProductsList()
+# TUI.createProductInput()
+TUI.getProduct()
