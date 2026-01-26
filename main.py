@@ -15,7 +15,10 @@ console.print(
     )
 )
 
-TUI.printProductsList()
+TUI.printCategoriesList()
+TUI.createCategoryInput()
+TUI.printCategoriesList()
+# TUI.printProductsList()
 # TUI.createProductInput()
 # TUI.getProduct()
 # TUI.getProductsTotal()
