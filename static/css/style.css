@@ -3,14 +3,19 @@
     padding: 0.2rem;
 }
 
+body {
+    background-color: #f8f8f8;
+    color: #494949;
+}
+
 header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: #00bd81;
+    background-color: #0295e4;
     padding: 0 0.7rem;
     border-radius: 1rem;
-    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
 
 header ul {
@@ -26,5 +31,32 @@ header ul li {
 }
 
 main {
-    padding: 2rem;
+    margin: 1rem 0;
+    padding: 0.3rem 1rem;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+#cash-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#cash {
+    color: white;
+    font-weight: 700;
+}
+
+.button-white {
+    border: none;
+    border-radius: 0.7rem;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    color: #0295e4;
+    padding: 0.4rem 1rem;
+    cursor: pointer;
+    margin: 0.2rem;
 }

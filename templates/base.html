@@ -15,10 +15,14 @@
             <li>Conta</li>
             <li>Contato</li>
         </ul>
+        <div id="cash-container">
+            <span id="cash">R$3.789,12</span>
+            <button class="button-white" onclick="() => {}" id="show-cash-b">Mostrar</button>
+        </div>
     </header>
-    <div id="content">
+    <main id="content">
         {% block content %} {% endblock %}
-    </div>
+    </main>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 
