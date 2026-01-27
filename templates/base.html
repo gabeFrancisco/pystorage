@@ -5,20 +5,17 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{% endblock %} - Chico Bank's</title>
+    <title>{% block title %}{% endblock %} - PyStorage</title>
 </head>
 
 <body>
     <header>
         <ul>
-            <li>Painel</li>
-            <li>Conta</li>
-            <li>Contato</li>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <!-- <li><a href="{{ url_for('categories') }}">Categorias</a></li>
+            <li><a href="{{ url_for('products') }}">Produtos</a></li>
+            <li><a href="{{ url_for('cash') }}">Caixa</a></li> -->
         </ul>
-        <div id="cash-container">
-            <span id="cash"></span>
-            <button class="button-white" onclick="() => {}" id="show-cash-b">Mostrar</button>
-        </div>
     </header>
     <main id="content">
         {% block content %} {% endblock %}

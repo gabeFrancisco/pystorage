@@ -11,8 +11,23 @@ app = Flask(__name__)
 
 
 @app.route("/")
-def hello_world():
+def index():
     return render_template("index.html")
+
+
+@app.route("/categories")
+def categories():
+    return render_template("categories.html")
+
+
+@app.route("/products")
+def products():
+    return "products.html"
+
+
+@app.route("/cash")
+def cash():
+    return "cash.html"
 
 
 if __name__ == "__main__":
