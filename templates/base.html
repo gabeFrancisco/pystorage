@@ -16,14 +16,14 @@
             <li>Contato</li>
         </ul>
         <div id="cash-container">
-            <span id="cash">R$3.789,12</span>
+            <span id="cash"></span>
             <button class="button-white" onclick="() => {}" id="show-cash-b">Mostrar</button>
         </div>
     </header>
     <main id="content">
         {% block content %} {% endblock %}
     </main>
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
 </body>
 
 </html>
