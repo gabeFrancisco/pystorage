@@ -4,7 +4,9 @@ from services.category_service import CategoryService
 from rich.console import Console
 from rich.panel import Panel
 from rich.prompt import Prompt
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, url_for, request
+from models.category import Category
+from datetime import datetime
 
 from tui import TUI
 
@@ -24,8 +26,18 @@ def categories():
     return render_template("categories.html", categories=data)
 
 
-@app.route("/categories/new")
+@app.route("/new_category", methods=["GET", "POST"])
 def new_category():
+
+    if request.method == "POST":
+        name = request.form.get("name")
+
+        category = Category(id=0, created_at=datetime.now(), updated_at=None, name=name)
+
+        category_service.create(category)
+
+        return redirect(url_for("categories"))
+
     return render_template("new_category.html")
 
 

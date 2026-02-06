@@ -102,14 +102,17 @@ button {
     background-color: #8f2d2d;
 }
 
+.btn-green:hover {
+    background-color: #2c825f;
+}
 
 .btn-green {
-    background-color: rgb(54, 167, 122);
+    background-color: #36a77a;
     color: #fff;
 }
 
 .btn-red {
-    background-color: rgb(200, 68, 68);
+    background-color: #c84444;
     color: #fff;
 }
 

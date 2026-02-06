@@ -5,6 +5,14 @@
 <h1>Nova categoria</h1>
 <div class="hr"></div>
 
-<div class="c-center"></div>
+<form action="/new_category" method="post">
+    <div class="c-center">
+        <div>
+            <label for="name">Nome da categoria</label>
+            <input name="name" id="name" type="text">
+        </div>
+        <button type="submit" style="margin-top: 1rem; width: 10vw;" class="btn-green">Criar!</button>
+    </div>
+</form>
 
 {% endblock %}
