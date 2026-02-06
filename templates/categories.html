@@ -1,2 +1,47 @@
 {% extends "base.html" %}
 {% block title %}Categorias{% endblock %}
+
+{% block content %}
+<h1>Categorias</h1>
+<div class="hr"></div>
+
+<div class="c-center">
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>Criado em</th>
+                    <th>Atualizado em</th>
+                    <th>Ações</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                <tr>
+                    <th>3</th>
+                    <td>Computadores</td>
+                    <td>12/01/2026</td>
+                    <td>-</td>
+                    <td>
+                        <button class="btn-blue">Editar</button>
+                        <button class="btn-red">Apagar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <td>Computadores</td>
+                    <td>12/01/2026</td>
+                    <td>-</td>
+                    <td>
+                        <button class="btn-blue">Editar</button>
+                        <button class="btn-red">Apagar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

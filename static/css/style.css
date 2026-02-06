@@ -1,3 +1,8 @@
+:root {
+    --primary: #0071e2;
+    --primary-variant: #3690eb;
+}
+
 * {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     padding: 0.2rem;
@@ -11,11 +16,17 @@ body {
 header {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    background: linear-gradient(to right, #0189d1, #72bde6);
+    justify-content: start;
+    align-items: center;
+    background: var(--primary);
     padding: 0 0.7rem;
     border-radius: 1rem;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+#logo {
+    width: 3rem;
+    margin: 0 0.7rem;
 }
 
 header ul {
@@ -59,13 +70,115 @@ main {
     font-weight: 700;
 }
 
-.button-white {
+button {
     border: none;
     border-radius: 0.7rem;
-    background-color: white;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-    color: #0295e4;
-    padding: 0.4rem 1rem;
+    padding: 0.5rem 1rem;
     cursor: pointer;
+    font-size: 16px;
     margin: 0.2rem;
+    color: #444;
+}
+
+.btn-white {
+    background-color: white;
+    color: var(--primary);
+}
+
+.btn-blue {
+    background-color: var(--primary);
+    color: #fff;
+}
+
+.btn-green {
+    background-color: rgb(54, 167, 122);
+    color: #fff;
+}
+
+.btn-red {
+    background-color: rgb(200, 68, 68);
+    color: #fff;
+}
+
+.hr {
+    width: 100%;
+    border-top: 1px solid #cacaca;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    padding-top: 1px;
+    margin: 0;
+}
+
+h1,
+h2,
+h3 {
+    margin-bottom: 0.3rem;
+}
+
+.c-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 0;
+}
+
+/* ------------- Table ------------- */
+
+.table-container {
+    border: 1px solid #d4d4d4;
+    overflow: hidden;
+    width: 70%;
+    border-radius: 6px;
+}
+
+table {
+    border-collapse: collapse;
+    overflow: hidden;
+    margin: 0;
+    width: 100%;
+    vertical-align: bottom;
+}
+
+th,
+td {
+    text-align: center;
+    padding: 0 0.7rem;
+}
+
+thead th {
+    background-color: var(--primary);
+    color: #fff;
+    padding: 10px;
+    /* border-bottom: 2px solid var(--primary-variant); */
+}
+
+thead th:first-child {
+    border-top-left-radius: 6px;
+}
+
+thead th:last-child {
+    border-top-right-radius: 6px;
+}
+
+td:last-child,
+th:last-child {
+    border-right: none;
+}
+
+tr {
+    border-bottom: 1px solid #ddd;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+
+tbody th {
+    padding: 10px;
+    /* border-bottom: 1px solid #ddd; */
+    border-right: 1px solid #ddd;
+
 }
