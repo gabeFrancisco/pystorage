@@ -72,7 +72,7 @@ main {
 
 button {
     border: none;
-    border-radius: 0.7rem;
+    border-radius: 0.5rem;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
     padding: 0.5rem 1rem;
     cursor: pointer;
@@ -90,6 +90,15 @@ button {
     background-color: var(--primary);
     color: #fff;
 }
+
+.btn-blue:hover {
+    background-color: #004f9d;
+}
+
+.btn-red:hover {
+    background-color: #8f2d2d;
+}
+
 
 .btn-green {
     background-color: rgb(54, 167, 122);
@@ -127,24 +136,28 @@ h3 {
 /* ------------- Table ------------- */
 
 .table-container {
-    border: 1px solid #d4d4d4;
     overflow: hidden;
-    width: 70%;
-    border-radius: 6px;
+    width: 100%;
 }
 
 table {
-    border-collapse: collapse;
+    border-radius: 6px;
+    border: 1px solid #d4d4d4;
+    border-collapse: separate;
     overflow: hidden;
     margin: 0;
     width: 100%;
     vertical-align: bottom;
+    margin: 0 !important;
+    padding: 0 !important;
+    /* A borda agora é da DIV, não da tabela */
 }
 
 th,
 td {
     text-align: center;
     padding: 0 0.7rem;
+    margin: 0;
 }
 
 thead th {
