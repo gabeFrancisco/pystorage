@@ -146,7 +146,6 @@ table {
     vertical-align: bottom;
     margin: 0 !important;
     padding: 0 !important;
-    /* A borda agora é da DIV, não da tabela */
 }
 
 th,

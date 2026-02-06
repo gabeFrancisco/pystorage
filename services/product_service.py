@@ -6,7 +6,24 @@ class ProductService:
     def getAll(self):
         with connection.cursor() as cursor:
             cursor.execute("SELECT * FROM products")
-            return cursor.fetchall()
+            rows = cursor.fetchall()
+
+            products = []
+
+            for row in rows:
+                product = Product(
+                    id=row[0],
+                    created_at=row[1],
+                    updated_at=row[2],
+                    name=row[3],
+                    description=row[4],
+                    quantity=row[5],
+                    price=row[6],
+                )
+
+            products.append(product)
+
+        return products
 
     def create(self, product: Product):
         try:
