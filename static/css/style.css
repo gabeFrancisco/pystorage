@@ -135,15 +135,11 @@ h3 {
 
 /* ------------- Table ------------- */
 
-.table-container {
-    overflow: hidden;
-    width: 100%;
-}
-
 table {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
     border-radius: 6px;
-    border: 1px solid #d4d4d4;
-    border-collapse: separate;
+    border: 1px solid #e7e7e7;
+    border-collapse: collapse;
     overflow: hidden;
     margin: 0;
     width: 100%;
@@ -156,7 +152,7 @@ table {
 th,
 td {
     text-align: center;
-    padding: 0 0.7rem;
+    padding: 0.2rem 0.7rem;
     margin: 0;
 }
 
@@ -181,7 +177,7 @@ th:last-child {
 }
 
 tr {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #e7e7e7;
 }
 
 tr:last-child td {

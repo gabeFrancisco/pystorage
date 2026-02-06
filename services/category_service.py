@@ -6,7 +6,17 @@ class CategoryService:
     def getAll(self):
         with connection.cursor() as cursor:
             cursor.execute("SELECT * FROM categories")
-            return cursor.fetchall()
+            rows = cursor.fetchall()
+
+            categories = []
+
+            for row in rows:
+                category = Category(
+                    id=row[0], created_at=row[1], updated_at=row[2], name=row[3]
+                )
+                categories.append(category)
+
+        return categories
 
     def create(self, category: Category):
         try:

@@ -1,4 +1,5 @@
 from services.product_service import ProductService
+from services.category_service import CategoryService
 
 from rich.console import Console
 from rich.panel import Panel
@@ -9,6 +10,8 @@ from tui import TUI
 
 app = Flask(__name__)
 
+category_service = CategoryService()
+
 
 @app.route("/")
 def index():
@@ -17,7 +20,8 @@ def index():
 
 @app.route("/categories")
 def categories():
-    return render_template("categories.html")
+    data = category_service.getAll()
+    return render_template("categories.html", categories=data)
 
 
 @app.route("/products")
