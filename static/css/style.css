@@ -161,6 +161,11 @@ td {
     margin: 0;
 }
 
+tr:hover {
+    cursor: pointer;
+    background-color: #d1e1f0;
+}
+
 thead th {
     background-color: var(--primary);
     color: #fff;
