@@ -24,6 +24,11 @@ def categories():
     return render_template("categories.html", categories=data)
 
 
+@app.route("/categories/new")
+def new_category():
+    return render_template("new_category.html")
+
+
 @app.route("/products")
 def products():
     return "products.html"

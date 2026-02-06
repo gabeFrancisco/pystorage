@@ -5,6 +5,10 @@
 <h1>Categorias</h1>
 <div class="hr"></div>
 
+<div>
+    <button class="btn-green" onclick="window.location.href=`{{ url_for('new_category') }}`">Nova categoria</button>
+</div>
+
 <div class="c-center">
     <table>
         <thead>
@@ -23,7 +27,7 @@
                 <th>{{ cat.id }}</th>
                 <td>{{ cat.name }}</td>
                 <td>{{ cat.created_at}}</td>
-                <td>{{ cat.updated_at }}</td>
+                <td>{{ cat.updated_at if cat.updated_at else "-" }}</td>
                 <td>
                     <button class="btn-blue">Editar</button>
                     <button class="btn-red">Apagar</button>
