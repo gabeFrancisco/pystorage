@@ -1,17 +1,34 @@
 from db import connection
 from models.product import Product
+from models.dtos.product_dto import ProductDTO
 
 
 class ProductService:
     def getAll(self):
         with connection.cursor() as cursor:
-            cursor.execute("SELECT * FROM products")
+            cursor.execute(
+                """
+                SELECT
+                    p.id,
+                    p.created_at,
+                    p.updated_at,
+                    p.name,
+                    p.description,
+                    p.quantity,
+                    p.price,
+                    c.name as category
+                FROM
+                    products p
+                    INNER JOIN categories c ON p.category_id = c.id;
+                """
+            )
+
             rows = cursor.fetchall()
 
             products = []
 
             for row in rows:
-                product = Product(
+                product = ProductDTO(
                     id=row[0],
                     created_at=row[1],
                     updated_at=row[2],
@@ -19,6 +36,7 @@ class ProductService:
                     description=row[4],
                     quantity=row[5],
                     price=row[6],
+                    category=row[7],
                 )
 
             products.append(product)
@@ -30,8 +48,8 @@ class ProductService:
             with connection.cursor() as cursor:
                 cursor.execute(
                     """
-                    INSERT INTO products(created_at, name, description, quantity, price) values (
-                        %s, %s, %s, %s, %s           
+                    INSERT INTO products(created_at, name, description, quantity, price, category_id) values (
+                        %s, %s, %s, %s, %s, %s          
                     )""",
                     (
                         product.created_at,
@@ -39,6 +57,7 @@ class ProductService:
                         product.description,
                         product.quantity,
                         product.price,
+                        product.category_id,
                     ),
                 )
 

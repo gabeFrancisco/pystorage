@@ -1,8 +1,4 @@
-from datetime import datetime
-from models.base_entity import BaseEntity
-
-
-class Product(BaseEntity):
+class ProductDTO:
     def __init__(
         self,
         id: int,
@@ -12,11 +8,13 @@ class Product(BaseEntity):
         description: str,
         quantity: int,
         price: float,
-        categoryId: int,
+        category: str,
     ):
-        super().__init__(id, created_at, updated_at)
+        self.id = id
+        self.create_at = created_at
+        self.updated_at = updated_at
         self.name = name
         self.description = description
         self.quantity = quantity
         self.price = price
-        self.category_id = categoryId
+        self.category = category
