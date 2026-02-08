@@ -24,7 +24,7 @@ header {
     align-items: center;
     background: var(--primary);
     padding: 0 0.7rem;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
 
@@ -55,10 +55,10 @@ header ul li a:hover {
 }
 
 main {
-    margin: 1rem 0;
+    margin: 0.7rem 0;
     padding: 0.3rem 1rem;
     background-color: white;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
 
