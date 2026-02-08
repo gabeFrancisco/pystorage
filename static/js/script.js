@@ -1,21 +1,11 @@
+let newCategoryForm = document.getElementById('newCategoryForm')
+let newCategoryInput = document.getElementById('newCategoryInput');
 
-// document.addEventListener('DOMContentLoaded', () => {
-//     let showState = true
+newCategoryForm.addEventListener('submit', (event) => {
+    if (newCategoryInput.value.trim() == "") {
+        alert("Por favor, preencha o nome da categoria!")
+        event.preventDefault()
+    }
+})
 
-//     const cash = document.getElementById('cash')
-//     const show_cash_b = document.getElementById('show-cash-b')
 
-//     cash.innerHTML = "R$3.127,72"
-
-//     show_cash_b.onclick = function () {
-//         if (showState) {
-//             cash.innerHTML = "R$3.127,72"
-//         }
-//         else {
-//             cash.innerHTML = "R$********"
-//         }
-
-//         showState = !showState
-//     }
-
-// })
