@@ -18,6 +18,25 @@ class CategoryService:
 
         return categories
 
+    def get(self, id: int):
+        try:
+            with connection.cursor() as cursor:
+                cursor.execute("""SELECT * FROM categories WHERE id = %s""", id)
+                rows = cursor.fetchall()
+
+            for row in rows:
+                category = Category(
+                    id=row[0], created_at=row[1], updated_at=row[2], name=row[3]
+                )
+
+            return category
+
+        except Exception as e:
+            connection.rollback()
+            print(f"An error occurred: {e}")
+
+            raise e
+
     def create(self, category: Category):
         try:
             with connection.cursor() as cursor:

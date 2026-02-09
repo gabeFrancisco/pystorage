@@ -43,7 +43,7 @@ def new_category():
 
 @app.route("/update_category/<int:category_id>", methods=["GET", "PUT"])
 def update_category(category_id):
-    return render_template("update_category.html")
+    return render_template("update_category.html", id=category_id)
 
 
 @app.route("/delete_category/<int:category_id>", methods=["DELETE"])

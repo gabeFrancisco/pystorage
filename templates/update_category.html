@@ -7,14 +7,15 @@
 
 <form action="/update_category" method="post" id="newCategoryForm">
     <div class="c-center">
+        <h3>Id: {{ id }}</h3>
         <div>
             <label for="name">Nome da categoria</label>
             <input name="name" id="newCategoryInput" type="text">
         </div>
         <div class="r-center" style="margin-top: 1rem;">
-            <button onclick="window.location.href='categories'" type="button" style="margin-right: 1rem;"
+            <button onclick="window.location.href='/categories'" type="button" style="margin-right: 1rem;"
                 class="btn-blue">Voltar</button>
-            <button type="submit" style="width: 10vw;" class="btn-green">Criar!</button>
+            <button type="submit" style="width: 10vw;" class="btn-green">Atualizar!</button>
         </div>
     </div>
 </form>
