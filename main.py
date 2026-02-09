@@ -1,9 +1,6 @@
 from services.product_service import ProductService
 from services.category_service import CategoryService
 
-from rich.console import Console
-from rich.panel import Panel
-from rich.prompt import Prompt
 from flask import Flask, render_template, redirect, url_for, request, abort
 from models.category import Category
 from datetime import datetime
@@ -44,6 +41,11 @@ def new_category():
     return render_template("new_category.html")
 
 
+@app.route("/update_category/<int:category_id>", methods=["GET", "PUT"])
+def update_category(category_id):
+    return render_template("update_category.html")
+
+
 @app.route("/delete_category/<int:category_id>", methods=["DELETE"])
 def delete_category(category_id):
     if category_id is None or category_id == 0:
@@ -51,7 +53,7 @@ def delete_category(category_id):
 
     category_service.delete(category_id)
 
-    return redirect(url_for("categories"))
+    # return redirect(url_for("categories"))
 
 
 @app.route("/products")
