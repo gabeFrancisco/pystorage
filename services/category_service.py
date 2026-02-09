@@ -1,11 +1,12 @@
 from db import connection
 from models.category import Category
+from datetime import datetime
 
 
 class CategoryService:
     def getAll(self):
         with connection.cursor() as cursor:
-            cursor.execute("SELECT * FROM categories")
+            cursor.execute("SELECT * FROM categories ORDER BY created_at")
             rows = cursor.fetchall()
 
             categories = []
@@ -21,7 +22,7 @@ class CategoryService:
     def get(self, id: int):
         try:
             with connection.cursor() as cursor:
-                cursor.execute("""SELECT * FROM categories WHERE id = %s""", id)
+                cursor.execute("""SELECT * FROM categories WHERE id = %s""", (id,))
                 rows = cursor.fetchall()
 
             for row in rows:
@@ -33,7 +34,6 @@ class CategoryService:
 
         except Exception as e:
             connection.rollback()
-            print(f"An error occurred: {e}")
 
             raise e
 
@@ -56,8 +56,22 @@ class CategoryService:
 
         except Exception as e:
             connection.rollback()
-            print(f"An error occurred: {e}")
 
+            raise e
+
+    def update(self, category: Category):
+        try:
+            with connection.cursor() as cursor:
+                cursor.execute(
+                    """
+                    UPDATE categories set updated_at = %s, name = %s where id = %s
+                    """,
+                    (datetime.now(), category.name, category.id),
+                )
+
+                connection.commit()
+        except Exception as e:
+            connection.rollback()
             raise e
 
     def delete(self, id):
@@ -67,6 +81,5 @@ class CategoryService:
                 connection.commit()
         except Exception as e:
             connection.rollback()
-            print(f"An error occurred: {e}")
 
             raise e

@@ -64,10 +64,8 @@ class ProductService:
                 # result = cursor.fetchall()
 
                 connection.commit()
-                print("Product created succesfully!")
         except Exception as e:
             connection.rollback()
-            print(f"An error occurred: {e}")
 
             raise e
 
@@ -78,7 +76,6 @@ class ProductService:
                 return cursor.fetchall()
         except Exception as e:
             connection.rollback()
-            print(f"An error occurred: {e}")
 
             raise e
 
@@ -89,7 +86,6 @@ class ProductService:
                 return cursor.fetchall()
         except Exception as e:
             connection.rollback()
-            print(f"An error occurred: {e}")
 
             raise e
 
@@ -100,6 +96,5 @@ class ProductService:
                 connection.commit()
         except Exception as e:
             connection.rollback()
-            print(f"An error occurred: {e}")
 
             raise e

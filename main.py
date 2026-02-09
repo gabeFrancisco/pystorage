@@ -33,7 +33,6 @@ def new_category():
             abort(400, "The name field is required!")
 
         category = Category(id=0, created_at=datetime.now(), updated_at=None, name=name)
-
         category_service.create(category)
 
         return redirect(url_for("categories"))
@@ -41,9 +40,22 @@ def new_category():
     return render_template("new_category.html")
 
 
-@app.route("/update_category/<int:category_id>", methods=["GET", "PUT"])
+@app.route("/update_category/<int:category_id>", methods=["GET", "POST"])
 def update_category(category_id):
-    return render_template("update_category.html", id=category_id)
+    dbCategory = category_service.get(category_id)
+
+    if request.method == "POST":
+        name = request.form.get("name")
+
+        if name is None or name == "":
+            abort(400, "The name field is required!")
+
+        dbCategory.name = name
+        category_service.update(dbCategory)
+
+        return redirect(url_for("categories"))
+
+    return render_template("update_category.html", category=dbCategory)
 
 
 @app.route("/delete_category/<int:category_id>", methods=["DELETE"])
@@ -52,8 +64,6 @@ def delete_category(category_id):
         abort(400, "Invalid ID!")
 
     category_service.delete(category_id)
-
-    # return redirect(url_for("categories"))
 
 
 @app.route("/products")

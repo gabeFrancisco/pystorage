@@ -1,16 +1,16 @@
 {% extends "base.html" %}
-{% block title %}Nova categoria{% endblock %}
+{% block title %}Atualizar categoria{% endblock %}
 
 {% block content %}
-<h1>Editar categoria</h1>
+<h1>Atualizar categoria</h1>
 <div class="hr"></div>
 
-<form action="/update_category" method="post" id="newCategoryForm">
+<form action="/update_category/{{ category.id }}" method="POST" id="newCategoryForm">
     <div class="c-center">
-        <h3>Id: {{ id }}</h3>
+        <h3>Id: {{ category.id }}</h3>
         <div>
             <label for="name">Nome da categoria</label>
-            <input name="name" id="newCategoryInput" type="text">
+            <input name="name" value="{{ category.name }}" id="newCategoryInput" type="text">
         </div>
         <div class="r-center" style="margin-top: 1rem;">
             <button onclick="window.location.href='/categories'" type="button" style="margin-right: 1rem;"
