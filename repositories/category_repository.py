@@ -3,7 +3,7 @@ from models.category import Category
 from datetime import datetime
 
 
-class CategoryService:
+class CategoryRepository:
     def getAll(self):
         with connection.cursor() as cursor:
             cursor.execute("SELECT * FROM categories ORDER BY created_at")

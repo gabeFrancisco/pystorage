@@ -1,15 +1,13 @@
-from services.product_service import ProductService
-from services.category_service import CategoryService
+from repositories.product_repository import ProductRepository
+from repositories.category_repository import CategoryRepository
 
 from flask import Flask, render_template, redirect, url_for, request, abort
 from models.category import Category
 from datetime import datetime
 
-from tui import TUI
-
 app = Flask(__name__)
 
-category_service = CategoryService()
+category_service = CategoryRepository()
 
 
 @app.route("/")

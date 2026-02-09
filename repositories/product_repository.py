@@ -3,7 +3,7 @@ from models.product import Product
 from models.dtos.product_dto import ProductDTO
 
 
-class ProductService:
+class ProductRepository:
     def getAll(self):
         with connection.cursor() as cursor:
             cursor.execute(
