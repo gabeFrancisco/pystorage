@@ -2,5 +2,36 @@
 {% block title %}Início{% endblock %}
 
 {% block content %}
-<p>Bem-vindo a aplicação de gerência de estoque, feito em Flask!</p>
+<p>
+<h3>Bem-vindo ao PyStorage!</h3>
+<p>Este sistema foi desenvolvido visando fixar os conteúdos sobre Python e Banco de Dados da Residência em TIC 55,
+    utilizando o framework Flask
+    como servidor web com integração ao banco de dados PostgreSQL.
+</p>
+<p>
+    Os conceitos de <i style="color: rgb(0, 112, 168)">API</i>, seus <i style="color: rgb(0, 112, 168)">endpoints</i> e
+    métodos <i style="color: rgb(0, 112, 168)">HTTP</i> foram grandemente abordados nesse projeto.
+</p>
+<p>Todas as chamadas ao banco de dados são feitas através de <i style="color: rgb(0, 112, 168)">queries</i>
+    puras, sem o uso do SQLAlchemy.
+</p>
+<p>Na raiz do projeto existe o arquivo <i style="color: rgb(0, 112, 168)">db_script.sql</i> para criar o banco de dados
+    e suas tabelas correspondentes.</p>
+<p>Nesse sistema básico você é capaz de:</p>
+<ul style="padding: 0 2rem;">
+    <li>
+        Cadastrar e organizar categorias.
+    </li>
+    <li>
+        Cadastrar e organizar produtos.
+    </li>
+</ul>
+
+
+<div class="c-center">
+    <h4 style="margin: 3px 0;">Este é um projeto de estudos somente :) ...</h4>
+    <p style="margin: 3px 0;">Desenvolvido por Gabriel Francisco</p>
+
+</div>
+
 {% endblock %}
