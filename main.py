@@ -44,6 +44,16 @@ def new_category():
     return render_template("new_category.html")
 
 
+@app.route("/delete_category/<int:category_id>", methods=["DELETE"])
+def delete_category(category_id):
+    if category_id is None or category_id == 0:
+        abort(400, "Invalid ID!")
+
+    category_service.delete(category_id)
+
+    return redirect(url_for("categories"))
+
+
 @app.route("/products")
 def products():
     return "products.html"
