@@ -5,27 +5,27 @@
 <h1>Nova produto</h1>
 <div class="hr"></div>
 
-<form action="/new_product" method="post" id="newCategoryForm">
+<form action="/new_product" method="post" id="newProductForm">
     <div class="c-center">
         <div class="field">
             <label for="name">Nome</label>
-            <input name="name" id="newCategoryInput" type="text">
+            <input name="name" id="name" type="text">
         </div>
         <div class="field">
-            <label for="name">Descrição</label>
+            <label for="description">Descrição</label>
             <textarea name="description" id="description"></textarea>
         </div>
         <div class="field">
-            <label for="name">Quantidade</label>
-            <input name="name" id="newCategoryInput" type="number">
+            <label for="quantity">Quantidade</label>
+            <input name="quantity" id="quantity" type="number">
         </div>
         <div class="field">
-            <label for="name">Preço</label>
-            <input name="name" id="newCategoryInput" type="number">
+            <label for="price">Preço</label>
+            <input name="price" id="price" type="number">
         </div>
         <div class="field">
-            <label for="">Categoria</label>
-            <select name="" id="">
+            <label for="category">Categoria</label>
+            <select name="category" id="category">
                 {% for cat in categories %}
                 <option value="{{ cat.id }}">{{ cat.name }}</option>
                 {% endfor %}
@@ -33,7 +33,7 @@
         </div>
 
         <div class="r-center" style="margin-top: 1rem;">
-            <button onclick="window.location.href='/categories'" type="button" style="margin-right: 1rem;"
+            <button onclick="window.location.href='/products'" type="button" style="margin-right: 1rem;"
                 class="btn-blue">Voltar</button>
             <button type="submit" class="btn-green">Criar!</button>
         </div>

@@ -40,7 +40,7 @@ class ProductRepository:
                     category=row[7],
                 )
 
-            products.append(product)
+                products.append(product)
 
         return products
 
@@ -62,9 +62,7 @@ class ProductRepository:
                     ),
                 )
 
-                # result = cursor.fetchall()
-
-                connection.commit()
+            connection.commit()
         except Exception as e:
             connection.rollback()
 

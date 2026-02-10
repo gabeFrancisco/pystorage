@@ -3,6 +3,7 @@ from repositories.category_repository import CategoryRepository
 
 from flask import Flask, render_template, redirect, url_for, request, abort
 from models.category import Category
+from models.product import Product
 from datetime import datetime
 
 app = Flask(__name__)
@@ -79,6 +80,21 @@ def products():
 
 @app.route("/new_product", methods=["GET", "POST"])
 def new_product():
+    if request.method == "POST":
+        name = request.form.get("name")
+        description = request.form.get("description")
+        quantity = request.form.get("quantity")
+        price = request.form.get("price")
+        category = request.form.get("category")
+
+        product = Product(
+            0, datetime.now(), None, name, description, quantity, price, category
+        )
+
+        product_repository.create(product)
+
+        return redirect(url_for("products"))
+
     categories = category_repository.getAll()
     return render_template("products/new_product.html", categories=categories)
 
