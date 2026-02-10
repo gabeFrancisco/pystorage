@@ -11,7 +11,7 @@ class ProductDTO:
         category: str,
     ):
         self.id = id
-        self.create_at = created_at
+        self.created_at = created_at
         self.updated_at = updated_at
         self.name = name
         self.description = description

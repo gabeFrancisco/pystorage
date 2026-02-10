@@ -16,6 +16,9 @@ def index():
     return render_template("index.html")
 
 
+# CATEGORIAS ------------------------------------------------------------------------------
+
+
 @app.route("/categories")
 def categories():
     data = category_repository.getAll()
@@ -65,10 +68,18 @@ def delete_category(category_id):
     category_repository.delete(category_id)
 
 
+# PRODUTOS ------------------------------------------------------------------------------
+
+
 @app.route("/products")
 def products():
     data = product_repository.getAll()
     return render_template("products/products.html", products=data)
+
+
+@app.route("/new_product", methods=["GET", "POST"])
+def new_product():
+    return render_template("products/new_product.html")
 
 
 if __name__ == "__main__":
