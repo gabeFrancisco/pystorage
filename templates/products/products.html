@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}Produtos{% endblock %}
+
+{% block content %}
+<h1>Produtos</h1>
+<div class="hr"></div>
+
+<div>
+    <button class="btn-green" onclick="window.location.href=`{{ url_for('new_category') }}`">Nova categoria</button>
+</div>
+
+<div class="c-center">
+    <table id="category-table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Quantidade</th>
+                <th>Preço</th>
+                <th>Categoria</th>
+                <th>Criado em</th>
+                <th>Atualizado em</th>
+                <th>Ações</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            {% for prod in products %}
+            <tr>
+                <th id="category-id">{{ prod.id }}</th>
+                <td>{{ prod.name }}</td>
+                <td>{{ prod.description }}</td>
+                <td>{{ prod.quantity }}</td>
+                <td>R${{ prod.price }}</td>
+                <td>{{ prod.category }}</td>
+                <td>{{ prod.created_at }}</td>
+                <td>{{ prod.updated_at if prod.updated_at else "-" }}</td>
+                <td>
+                    <button onclick="window.location.href=`{{ url_for('update_category', category_id=prod.id) }}`"
+                        id="update-category-btn" class="btn-blue">Editar</button>
+                    <button data-id="{{ prod.id }}" id="delete-category-btn" class="btn-red">Apagar</button>
+                </td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

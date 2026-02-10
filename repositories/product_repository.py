@@ -19,7 +19,8 @@ class ProductRepository:
                     c.name as category
                 FROM
                     products p
-                    INNER JOIN categories c ON p.category_id = c.id;
+                    INNER JOIN categories c ON p.category_id = c.id
+                    ORDER BY created_at;
                 """
             )
 
