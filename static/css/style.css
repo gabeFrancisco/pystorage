@@ -152,8 +152,7 @@ h3 {
 
 table {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-    border-radius: 6px;
-    border: 1px solid #e7e7e7;
+    border-radius: 5px;
     border-collapse: collapse;
     overflow: hidden;
     margin: 0;
@@ -161,6 +160,7 @@ table {
     vertical-align: bottom;
     margin: 0 !important;
     padding: 0 !important;
+
 }
 
 th,
@@ -172,22 +172,25 @@ td {
 
 tr:hover {
     cursor: pointer;
-    background-color: #ebf5fe;
+    background-color: #f1f1f1;
 }
 
 thead th {
-    background-color: var(--primary);
-    color: #fff;
-    padding: 10px;
-    /* border-bottom: 2px solid var(--primary-variant); */
+    background-color: #ededed;
+    color: #3b3b3b;
+    padding: 7px 5px;
+    font-weight: 500;
+    border-top: 1px solid #dadada;
 }
 
 thead th:first-child {
-    border-top-left-radius: 6px;
+    border-left: 1px solid #dadada;
+    border-top-left-radius: 3px;
 }
 
 thead th:last-child {
-    border-top-right-radius: 6px;
+    border-top-right-radius: 3px;
+    border-right: 1px solid #dadada;
 }
 
 td:last-child,
@@ -208,4 +211,31 @@ tbody th {
     padding: 10px;
     /* border-bottom: 1px solid #ddd; */
     border-right: 1px solid #ddd;
+}
+
+.field {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+label {
+    text-align: right;
+}
+
+input,
+textarea,
+select {
+    padding: 7px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+select {
+    width: 100%;
 }

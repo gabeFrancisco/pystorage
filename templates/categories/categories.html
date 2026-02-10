@@ -24,7 +24,7 @@
         <tbody>
             {% for cat in categories %}
             <tr>
-                <th id="category-id">{{ cat.id }}</th>
+                <th id="category-id">#{{ cat.id }}</th>
                 <td>{{ cat.name }}</td>
                 <td>{{ cat.created_at }}</td>
                 <td>{{ cat.updated_at if cat.updated_at else "-" }}</td>

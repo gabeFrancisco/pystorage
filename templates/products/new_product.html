@@ -7,14 +7,29 @@
 
 <form action="/new_product" method="post" id="newCategoryForm">
     <div class="c-center">
-        <div>
+        <div class="field">
             <label for="name">Nome</label>
             <input name="name" id="newCategoryInput" type="text">
         </div>
-        <div>
+        <div class="field">
             <label for="name">Descrição</label>
             <textarea name="description" id="description"></textarea>
         </div>
+        <div class="field">
+            <label for="name">Quantidade</label>
+            <input name="name" id="newCategoryInput" type="number">
+        </div>
+        <div class="field">
+            <label for="name">Preço</label>
+            <input name="name" id="newCategoryInput" type="number">
+        </div>
+        <div class="field">
+            <label for="">Categoria</label>
+            <select name="" id="">
+                <option value="0">Livros</option>
+            </select>
+        </div>
+
         <div class="r-center" style="margin-top: 1rem;">
             <button onclick="window.location.href='/categories'" type="button" style="margin-right: 1rem;"
                 class="btn-blue">Voltar</button>
