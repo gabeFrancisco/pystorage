@@ -26,14 +26,16 @@
         <div class="field">
             <label for="">Categoria</label>
             <select name="" id="">
-                <option value="0">Livros</option>
+                {% for cat in categories %}
+                <option value="{{ cat.id }}">{{ cat.name }}</option>
+                {% endfor %}
             </select>
         </div>
 
         <div class="r-center" style="margin-top: 1rem;">
             <button onclick="window.location.href='/categories'" type="button" style="margin-right: 1rem;"
                 class="btn-blue">Voltar</button>
-            <button type="submit" style="width: 10vw;" class="btn-green">Criar!</button>
+            <button type="submit" class="btn-green">Criar!</button>
         </div>
     </div>
 </form>

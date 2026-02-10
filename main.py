@@ -79,7 +79,8 @@ def products():
 
 @app.route("/new_product", methods=["GET", "POST"])
 def new_product():
-    return render_template("products/new_product.html")
+    categories = category_repository.getAll()
+    return render_template("products/new_product.html", categories=categories)
 
 
 if __name__ == "__main__":
