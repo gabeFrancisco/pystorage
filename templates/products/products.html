@@ -19,8 +19,8 @@
                 <th>Quantidade</th>
                 <th>Preço</th>
                 <th>Categoria</th>
-                <th>Criado em</th>
-                <th>Atualizado em</th>
+                <!-- <th>Criado em</th>
+                <th>Atualizado em</th> -->
                 <th>Ações</th>
             </tr>
 
@@ -34,8 +34,8 @@
                 <td>{{ prod.quantity }}</td>
                 <td>R${{ prod.price }}</td>
                 <td>{{ prod.category }}</td>
-                <td>{{ prod.created_at }}</td>
-                <td>{{ prod.updated_at if prod.updated_at else "-" }}</td>
+                <!-- <td>{{ prod.created_at }}</td>
+                <td>{{ prod.updated_at if prod.updated_at else "-" }}</td> -->
                 <td>
                     <button onclick="window.location.href=`{{ url_for('update_category', category_id=prod.id) }}`"
                         id="update-category-btn" class="btn-blue">Editar</button>
