@@ -1,19 +1,20 @@
-from repositories.product_repository import ProductRepository
 from repositories.category_repository import CategoryRepository
 
 from flask import Flask, render_template, redirect, url_for, request, abort
 from models.category import Category
-from models.product import Product
+
 from datetime import datetime
 
 app = Flask(__name__)
 
 category_repository = CategoryRepository()
-product_repository = ProductRepository()
+
 
 from controllers.home import home_bp
+from controllers.products import products_bp
 
 app.register_blueprint(home_bp)
+app.register_blueprint(products_bp)
 
 # CATEGORIAS ------------------------------------------------------------------------------
 
@@ -68,34 +69,6 @@ def delete_category(category_id):
 
 
 # PRODUTOS ------------------------------------------------------------------------------
-
-
-@app.route("/products")
-def products():
-    data = product_repository.getAll()
-    return render_template("products/products.html", products=data)
-
-
-@app.route("/new_product", methods=["GET", "POST"])
-def new_product():
-    if request.method == "POST":
-        name = request.form.get("name")
-        description = request.form.get("description")
-        quantity = request.form.get("quantity")
-        price = request.form.get("price")
-        category = request.form.get("category")
-
-        product = Product(
-            0, datetime.now(), None, name, description, quantity, price, category
-        )
-
-        product_repository.create(product)
-
-        return redirect(url_for("products"))
-
-    categories = category_repository.getAll()
-    return render_template("products/new_product.html", categories=categories)
-
 
 if __name__ == "__main__":
     app.run(debug=True)

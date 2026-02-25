@@ -13,9 +13,9 @@
     <header>
         <img id="logo" src="{{ url_for('static', filename='assets/logo.png') }}" alt="Logo" />
         <ul>
-            <li><a href="{{ url_for('/.index') }}">Início</a></li>
+            <li><a href="{{ url_for('home.index') }}">Início</a></li>
             <li><a href="{{ url_for('categories') }}">Categorias</a></li>
-            <li><a href="{{ url_for('products') }}">Produtos</a></li>
+            <li><a href="{{ url_for('products.products') }}">Produtos</a></li>
         </ul>
     </header>
     <main id="content">
