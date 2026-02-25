@@ -1,6 +1,6 @@
 from db import connection
 from models.product import Product
-from models.dtos.product_dto import ProductDTO
+from models.view_models.product_view_model import ProductViewModel
 
 
 class ProductRepository:
@@ -29,7 +29,7 @@ class ProductRepository:
             products = []
 
             for row in rows:
-                product = ProductDTO(
+                product = ProductViewModel(
                     id=row[0],
                     created_at=row[1],
                     updated_at=row[2],

@@ -11,11 +11,9 @@ app = Flask(__name__)
 category_repository = CategoryRepository()
 product_repository = ProductRepository()
 
+from controllers.home import home_bp
 
-@app.route("/")
-def index():
-    return render_template("index.html")
-
+app.register_blueprint(home_bp)
 
 # CATEGORIAS ------------------------------------------------------------------------------
 

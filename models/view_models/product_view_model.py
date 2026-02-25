@@ -1,4 +1,4 @@
-class ProductDTO:
+class ProductViewModel:
     def __init__(
         self,
         id: int,
