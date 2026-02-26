@@ -1,4 +1,4 @@
-const newProductForm = document.getElementById('newProductForm')
+const productForm = document.getElementById('productForm')
 
 const _name = document.getElementById('name')
 const description = document.getElementById('description')
@@ -6,7 +6,7 @@ const quantity = document.getElementById('quantity')
 const price = document.getElementById('price')
 const categoryId = document.getElementById('category')
 
-newProductForm.addEventListener('submit', (event) => {
+productForm.addEventListener('submit', (event) => {
     if (_name.value.trim() == "") {
         alert("Nome obrigatório!")
         event.preventDefault()

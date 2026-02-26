@@ -5,7 +5,7 @@
 <h1>Nova produto</h1>
 <div class="hr"></div>
 
-<form action="/new_product" method="post" id="newProductForm">
+<form action="/new_product" method="post" id="productForm">
     <div class="c-center">
         <div class="field">
             <label for="name">Nome</label>
@@ -38,7 +38,7 @@
             <button type="submit" class="btn-green">Criar!</button>
         </div>
     </div>
-    <script src="{{ url_for('static', filename='js/new_product.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/product-forms.js') }}" defer></script>
 </form>
 
 {% endblock %}

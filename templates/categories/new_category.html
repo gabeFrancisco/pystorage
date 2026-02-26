@@ -5,11 +5,11 @@
 <h1>Nova categoria</h1>
 <div class="hr"></div>
 
-<form action="/new_category" method="post" id="newCategoryForm">
+<form action="/new_category" method="post" id="categoryForm">
     <div class="c-center">
         <div>
             <label for="name">Nome da categoria</label>
-            <input name="name" id="newCategoryInput" type="text">
+            <input name="name" id="name" type="text">
         </div>
         <div class="r-center" style="margin-top: 1rem;">
             <button onclick="window.location.href='/categories'" type="button" style="margin-right: 1rem;"
@@ -17,6 +17,7 @@
             <button type="submit" style="width: 10vw;" class="btn-green">Criar!</button>
         </div>
     </div>
+    <script src="{{ url_for('static', filename='js/category-forms.js') }}" defer></script>
 </form>
 
 {% endblock %}

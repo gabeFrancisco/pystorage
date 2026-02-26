@@ -22,14 +22,3 @@ if (categoryTable) {
     })
 }
 
-
-//New category page ----------------------------------------------------------
-
-newCategoryForm.addEventListener('submit', (event) => {
-    if (newCategoryInput.value.trim() == "") {
-        alert("Por favor, preencha o nome da categoria!")
-        event.preventDefault()
-    }
-})
-
-
