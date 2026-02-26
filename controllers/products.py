@@ -11,13 +11,13 @@ product_repository = ProductRepository()
 
 
 @products_bp.route("/products")
-def products():
+def getAll():
     data = product_repository.getAll()
     return render_template("products/products.html", products=data)
 
 
 @products_bp.route("/new_product", methods=["GET", "POST"])
-def new_product():
+def new():
     if request.method == "POST":
         name = request.form.get("name")
         description = request.form.get("description")
@@ -35,3 +35,8 @@ def new_product():
 
     categories = category_repository.getAll()
     return render_template("products/new_product.html", categories=categories)
+
+
+@products_bp.route("/update_product", methods=["GET", "POST"])
+def update():
+    return True

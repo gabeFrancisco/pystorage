@@ -6,7 +6,7 @@
 <div class="hr"></div>
 
 <div>
-    <button class="btn-green" onclick="window.location.href=`{{ url_for('categories.new_category') }}`">Nova
+    <button class="btn-green" onclick="window.location.href=`{{ url_for('categories.new') }}`">Nova
         categoria</button>
 </div>
 
@@ -30,8 +30,7 @@
                 <td>{{ cat.created_at }}</td>
                 <td>{{ cat.updated_at if cat.updated_at else "-" }}</td>
                 <td>
-                    <button
-                        onclick="window.location.href=`{{ url_for('categories.update_category', category_id=cat.id) }}`"
+                    <button onclick="window.location.href=`{{ url_for('categories.update', category_id=cat.id) }}`"
                         id="update-category-btn" class="btn-blue">Editar</button>
                     <button data-id="{{ cat.id }}" id="delete-category-btn" class="btn-red">Apagar</button>
                 </td>

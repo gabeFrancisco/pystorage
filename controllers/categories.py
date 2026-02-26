@@ -9,13 +9,13 @@ category_repository = CategoryRepository()
 
 
 @categories_bp.route("/categories")
-def categories():
+def getAll():
     data = category_repository.getAll()
     return render_template("categories/categories.html", categories=data)
 
 
 @categories_bp.route("/new_category", methods=["GET", "POST"])
-def new_category():
+def new():
 
     if request.method == "POST":
         name = request.form.get("name")
@@ -32,7 +32,7 @@ def new_category():
 
 
 @categories_bp.route("/update_category/<int:category_id>", methods=["GET", "POST"])
-def update_category(category_id):
+def update(category_id):
     dbCategory = category_repository.get(category_id)
 
     if request.method == "POST":
@@ -50,7 +50,7 @@ def update_category(category_id):
 
 
 @categories_bp.route("/delete_category/<int:category_id>", methods=["DELETE"])
-def delete_category(category_id):
+def delete(category_id):
     if category_id is None or category_id == 0:
         abort(400, "Invalid ID!")
 
